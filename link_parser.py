@@ -1,6 +1,6 @@
 # Copyright (C) 2017 Coresecurity
 # Author : HanIk Joo (joohanik@coresec.co.kr)
-
+# Version : 1.0
 
 import sys
 import getopt
