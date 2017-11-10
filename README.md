@@ -37,5 +37,4 @@ If you want to parse only one linkfile, command as follow:
 	[+] Finishing Shell Link Parser
 
 ## Contacts
-linkparser was written by joohanik(joohanik@coresec.co.kr)
-Feel free to send me an E-mail if you have any questions.
+linkparser was written by joohanik(joohanik@coresec.co.kr). Feel free to send me an E-mail if you have any questions.
