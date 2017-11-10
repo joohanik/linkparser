@@ -4,8 +4,24 @@ Microsoft Windows OS linkfile(Shortcut) parser
 
 
 ## How to use
-If you want to parse only one linkfile, command as follow:
-	$ python link_parser.py -f [Path to linkfile]
+	$ python link_parser.py
+	[*] Windows Shell Link Parser v0.1 Beta
+	[*] Contact to joohanik@gmail.com
+	[*] Copyright (C) 2013 Core Security Contributors
+
+	Usage : link_parser.py [OPTION] [LINK_FILE_NAME]
+	Try '-h' or '--help' option for more information
+
+	$ python link_parser.py -h
+	[*] Windows Shell Link Parser v0.1 Beta
+	[*] Copyright (C) 2013 Core Security Contributors
+
+	Usage : link_parser.py [OPTION] [LINK_FILE_NAME]
+	  -h  --help
+		print usage summary
+	  -f  --file
+		use specified link file
+
 
 ## Example
 	$ python link_parser.py -f ./linkfile_sample/USBDumper.lnk
