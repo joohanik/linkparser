@@ -15,7 +15,7 @@ def main(argv):
         exit()
 
     try:  # http://www.faqs.org/docs/diveintopython/kgp_commandline.html
-        opts, args = getopt.getopt(argv, "hf:", ["help", "file="])   
+        opts, args = getopt.getopt(argv, "hfo:", ["help", "file=", "output="])   
     except getopt.GetoptError:
         Usage()
         exit()
@@ -34,19 +34,28 @@ def main(argv):
                 if LinkFileRawData[0x04:0x08].encode('hex') != "01140200":  # Link File Signature Check
                     print "Incorrect Signature."
                     exit()
-                print "\n[+] Starting Shell Link Parser 0.1 Beta at " + time.strftime("%Y-%m-%d %H:%M:%S") + "\n"
+                print "\n[+] Starting Shell Link Parser v1.0 at " + time.strftime("%Y-%m-%d %H:%M:%S") + "\n"
                 ShellLinkParser(LinkFileRawData)                                
                 print "\n[+] Finishing Shell Link Parser\n"
                 exit()
-    Usage()
-            
+        elif opt in ("-o", "--output"):
+            try:
+                OutputCSV()
+            except:
+                print 'Not implemented.'
+                exit()
+
 
 def Help():
-    print "[*] Windows Shell Link Parser v0.1 Beta"
-    print "[*] Copyright (C) 2013 Core Security Contributors\n"
-    print "Usage : " + sys.argv[0] + " [OPTION] [LINK_FILE_NAME]"
+    print "[*] Windows Shell Link Parser v1.0"
+    print "[*] Copyright (C) 2017 Core Security Contributors\n"
+    print "Usage : " + sys.argv[0] + " [OPTIONS] [FILE or DIRECTORY]"
     print "  -h  --help\n\tprint usage summary"
-    print "  -f  --file\n\tuse specified link file\n"    
+    print "  -f FILE,  --file FILE\n\tread SHELL_LINK from FILE"
+    print "  -o FILE,  --output FILE\n\twrite CSV result to FILE"    
+
+def OutputCSV():
+    print "Not implemented."
     
 def DriveTypeParser(raw_data):
     DRIVE_UNKNOWN = 0
@@ -89,7 +98,6 @@ def DriveTypeParser(raw_data):
         DriveType['DRIVE_RAMDISK'] = True
     
     return DriveType
-
         
 def LinkInfoFlagsParser(raw_data):
     VolumeIDAndLocalBasePath = 1 << 0
@@ -196,10 +204,10 @@ def FileTimeParser(hex_time_data):
     return datetime(1601,1,1) + timedelta(microseconds=us)
 
 def Usage():
-    print "[*] Windows Shell Link Parser v0.1 Beta"
+    print "[*] Windows Shell Link Parser v1.0"
     print "[*] Contact to joohanik@gmail.com"
-    print "[*] Copyright (C) 2013 Core Security Contributors\n"    
-    print "Usage : " + sys.argv[0] + " [OPTION] [LINK_FILE_NAME]"
+    print "[*] Copyright (C) 2017 Core Security Contributors\n"    
+    print "Usage : " + sys.argv[0] + " [OPTIONS]"
     print "Try '-h' or '--help' option for more information"
     
 

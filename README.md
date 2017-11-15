@@ -5,16 +5,16 @@ Microsoft Windows OS linkfile(Shortcut) parser
 
 ## How to use
 	$ python link_parser.py
-	[*] Windows Shell Link Parser v0.1 Beta
+	[*] Windows Shell Link Parser v1.0
 	[*] Contact to joohanik@gmail.com
-	[*] Copyright (C) 2013 Core Security Contributors
+	[*] Copyright (C) 2017 Core Security Contributors
 
 	Usage : link_parser.py [OPTION] [LINK_FILE_NAME]
 	Try '-h' or '--help' option for more information
 
 	$ python link_parser.py -h
-	[*] Windows Shell Link Parser v0.1 Beta
-	[*] Copyright (C) 2013 Core Security Contributors
+	[*] Windows Shell Link Parser v1.0
+	[*] Copyright (C) 2017 Core Security Contributors
 
 	Usage : link_parser.py [OPTION] [LINK_FILE_NAME]
 	  -h  --help
@@ -26,7 +26,7 @@ Microsoft Windows OS linkfile(Shortcut) parser
 ## Example
 	$ python link_parser.py -f ./linkfile_sample/USBDumper.lnk
 
-	[+] Starting Shell Link Parser 0.1 Beta at 2017-11-11 00:08:53
+	[+] Starting Shell Link Parser v1.0 at 2017-11-11 00:08:53
 
 	  [SHELL_LINK_HEADER structure]
 		HeaderSize : 76 (Bytes)
